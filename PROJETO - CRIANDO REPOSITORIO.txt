@@ -43,3 +43,8 @@ para criar arquivos html, ts e css, automaticamente em uma pasta, fazer: ng g c 
 frontend => crtl+h (find and replace)
 
 teclas shift+alt+seta para baixo, duplica a linha acima
+
+
+===========================================
+
+

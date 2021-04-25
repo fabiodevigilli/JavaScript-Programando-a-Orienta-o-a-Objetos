@@ -1,0 +1,54 @@
+*** PARA CRIAR UM ARQUIVO package.json:
+
+PS C:\Repositórios\JavaScript-Programando-a-Orienta-o-a-Objetos\Projeto-ByteBank> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (projeto-bytebank) bytebank
+version: (1.0.0)
+description: Projeto do bytebank para seus clientes
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Fabio
+license: (ISC)
+About to write to C:\Repositórios\JavaScript-Programando-a-Orienta-o-a-Objetos\Projeto-ByteBank\package.json:
+
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Projeto do bytebank para seus clientes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabio",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) y
+PS C:\Repositórios\JavaScript-Programando-a-Orienta-o-a-Objetos\Projeto-ByteBank>
+
+
+===================================
+
+"Ok, mas e essa tag de script?"
+
+Até este momento no curso não fizemos muitas operações complicadas, pois só estamos usando o terminal para chamar o interpretador do NodeJS e pedindo para ele executar o arquivo que queremos. Mas conforme nosso projeto cresce ou usamos outras bibliotecas para desenvolver a aplicação, é comum que o comando que precisamos rodar no terminal fique longo ou que ele precise de alguns parâmetros especiais. Como normalmente estamos trabalhando em equipe, não queremos que alguém na nossa equipe precise ficar perguntando o tempo todo qual o comando precisa escrever para o programa rodar. É nesse momento que usamos os scripts do package.json.
+
+Podemos escrever um script com o comando que colocaríamos no terminal, por exemplo:
+
+"scripts": {
+    "start": "node index.js"
+}
+
+E ao invés de escrever esse comando podemos chamar o script com o comando npm start. Dessa forma não precisamos lembrar de todo o comando sempre que vamos executar o programa. Se você quiser saber mais, veja na documentação do NPM os tipos de scripts e os casos de uso.

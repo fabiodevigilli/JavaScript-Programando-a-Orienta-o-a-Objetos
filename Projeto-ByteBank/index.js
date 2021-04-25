@@ -1,32 +1,7 @@
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
+
 // teclas ctrl + alt + seta para cima ou para baixo, para selecionar mesma coluna em diferentes linhas
-
-class Cliente{
-    nome;
-    cpf;    
-}
-
-class ContaCorrente{
-    // https://github.com/tc39/proposal-class-fields#private-fields
-    // "#"  representa uma propriedade privada 
-    // "_" representa apenas uma convenção da comunidde de que a propriedade é privada, porém, não há bloqueio efetivo do uso externo
-    agencia;
-    _saldo = 0;
-
-    sacar(valor){
-        if(this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
-        }
-    }
-
-    depositar(valor){
-        if(valor <= 0){
-            return;
-        }
-        this._saldo += valor;            
-    }
-}
-
 const cliente1 = new Cliente();
 cliente1.nome = "Ricardo";
 cliente1.cpf = 11122233309;
@@ -38,10 +13,16 @@ cliente2.cpf = 88822233309;
 const contaCorrenteRicardo = new ContaCorrente();
 
 contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.cliente = cliente1;
+contaCorrenteRicardo.depositar(500);
 
-contaCorrenteRicardo.depositar(300);
-const valorSacado = contaCorrenteRicardo.sacar(50);
+const conta2 = new ContaCorrente();
+conta2.cliente = cliente2;
+conta2.agencia = 102;
 
-console.log(valorSacado);
+let valor = 200;
+contaCorrenteRicardo.transferir(valor, conta2);
 
-console.log(contaCorrenteRicardo);
+console.log("valor: ", valor);
+console.log(conta2);
+
